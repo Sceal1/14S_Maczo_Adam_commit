@@ -35,7 +35,17 @@ namespace _14SMaczoAdamOrai_01_17
         private void okButton_Click(object sender, EventArgs e)
         {
             List<Hiba> lista = new List<Hiba>();
-            lista.Add(new Hiba(hibaBox.Text,bejelentesBox.Text,leirasBox.Text));
+            if (!String.IsNullOrWhiteSpace(hibaBox.Text) && !String.IsNullOrWhiteSpace(bejelentesBox.Text) && !String.IsNullOrWhiteSpace(leirasBox.Text))
+            {
+                lista.Add(new Hiba(hibaBox.Text, bejelentesBox.Text, leirasBox.Text));
+                hibaBox.Text = "";
+                bejelentesBox.Text = "";
+                leirasBox.Text = "";
+            }
+            else {
+                MessageBox.Show("Valami probléma adódott. Sad react");
+            }
+            
         }
     }
 }
