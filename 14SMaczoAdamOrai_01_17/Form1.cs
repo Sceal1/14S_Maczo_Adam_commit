@@ -31,5 +31,11 @@ namespace _14SMaczoAdamOrai_01_17
         {
 
         }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            List<Hiba> lista = new List<Hiba>();
+            lista.Add(new Hiba(hibaBox.Text,bejelentesBox.Text,leirasBox.Text));
+        }
     }
 }
